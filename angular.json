@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "arc-frontend": {
+    "a-f": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -68,39 +68,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "arc-frontend:build:production"
+              "browserTarget": "a-f:build:production"
             },
             "development": {
-              "browserTarget": "arc-frontend:build:development"
+              "browserTarget": "a-f:build:development"
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "arc-frontend:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "scripts": [],
-            "styles": [
-            ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-              ]
-            },
-            "assets": []
-          }
         }
       }
     }
