@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class CustomPreloadingService implements PreloadingStrategy {
   preload(route: Route, fn: () => Observable<any>): Observable<any> {
-    return timer(5000).pipe(map(() => fn()));
+    console.log('preload', route.path);
+    return timer(2000).pipe(map(() => fn()));
   }
 }
