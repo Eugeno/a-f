@@ -1,17 +1,9 @@
-1a. начинаем с `/pages`, **b** и **c** в прелоад.
+1. start with route `/pages`, **b** и **c** will be preloaded
+(or with `/pages/c/review`, module **c** will be loaded, module **b** will be preloaded).
 
-1b. начинаем `/pages/c/review`, модуль **c** загрузился, модуль **b** запрелоадился
+2. navigate to **b**: **b-index** and **b-review** loaded (not preloaded at the stage 1),
+**b-detail-index** will be preloaded.
 
-2. заходим в **b**: грузятся **b-index** и **b-review** (а хотелось бы их прелоад),
-прелоадится **b-detail-index**
-
-3. идём глубже, попадаем в `pages/b/detail/1/maintenance`,
-загрузился **b-detail-component** и **b-maintenance** (а хотелось бы их прелоад),
-**b-additional** прелоадится
-
----
-
-из **c** может быть ссылка на **b-maintenance**, но будучи в **c** мы получаем прелоад
-лишь его соседа **b**, а 4 (в данном случае) необходимых жс-файла начнут грузиться
-лишь по переходу: **b-index**, **b-detail-index**, **b-detail-component** и **b-maintenance**
-(**b-review** и **b-additional** прелоадятся)
+3. go deeper, `pages/b/detail/1/maintenance`,
+**b-detail-component** and **b-maintenance** loaded (not preloaded at the previous stages),
+**b-additional** will be preloaded.
